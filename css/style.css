@@ -25,6 +25,50 @@
 /* 01. Basic Styles
  * =================================================================== */
 
+/* Kontakta oss button styles */
+.btn-contact {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    font-family: "Dosis", arial, tahoma, verdana;
+    font-size: 14px;
+    margin: 10px 5px;
+    border-radius: 3px;
+}
+
+    .btn-contact:hover {
+        background-color: #16a085;
+        color: white;
+        opacity: 0.9;
+    }
+
+/* Contact section styles */
+#contact h2 {
+    color: #1abc9c;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+    border: 2px solid #1abc9c;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#contact .btn-primary {
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    color: white;
+}
+
+    #contact .btn-primary:hover {
+        background-color: #16a085;
+        border-color: #16a085;
+    }
+
+
+
  html {
     overflow-x: hidden;
  }
@@ -34,9 +78,6 @@
 
  h1 {
     font-weight: bold;
- }
-
- h2 {
  }
 
  h5 {
@@ -195,14 +236,16 @@
     font-size: 1.7em;
 }
 
+col-md-6 col-md-offset-3 text-center {
+    color: white;
+}
 
 /* 04. Icon Font
  * =================================================================== */
-
- .lnr {
+.lnr {
     font-size: 4em !important;
-    color:#fff;
- }
+    color: #fff;
+}
 
 /* 05. Section Styles
  * =================================================================== */
