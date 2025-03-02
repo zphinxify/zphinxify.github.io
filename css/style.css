@@ -1,456 +1,875 @@
 /**
- * =================================================================== 
- *
- *  ResumeTemplate v1.0 ClearCareer
- *  url: clearcareer.ca
- *  Design by: Iskender Piyale-Sheard
- *  website: izzydoesizzy.com
- *  Created 06-27-2016
- *  Last Updated: 03-19-2017
- *  ------------------------------------------------------------------
- *  Table of Contents:
-
- *  01. Global Styles
- *  02. Intro
- *  03. Social Icons
- *  04. Icon Fonts
- *  05. Section Styles
- *  06. Timeline Styles
- *  05. Footer
- EXTRAS
-
- * =================================================================== 
+ * JRM Borås - Modernized Stylesheet with Service Grid
+ * Uses CSS variables for better maintainability
  */
 
-/* 01. Basic Styles
- * =================================================================== */
-
-/* Kontakta oss button styles */
-.btn-contact {
-    background-color: #1abc9c;
+ :root {
+    /* Color variables */
+    --primary-color: #1abc9c;
+    --primary-dark: #16a085;
+    --text-color: #726f77;
+    --bg-color: #fff;
+    --bg-dark: #333;
+    --bg-light: #f8f9fa;
+    --overlay-color: rgba(17, 17, 17, 0.7);
+    --section-padding: 100px 0;
+    
+    /* Typography */
+    --heading-font: 'Dosis', arial, tahoma, verdana;
+    --body-font: 'Source Sans Pro', sans-serif;
+  }
+  
+  /* 01. Basic Styles
+   * =================================================================== */
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+  }
+  
+  h1 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  h5 {
+    font-weight: 600;
+  }
+  
+  a {
+    cursor: pointer;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+    opacity: 0.9;
+  }
+  
+  hr {
+    border-top: 5px solid var(--primary-color);
+    width: 80px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+  }
+  
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  /* Kontakta oss button styles */
+  .btn-contact {
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
-    font-family: "Dosis", arial, tahoma, verdana;
+    font-family: var(--heading-font);
     font-size: 14px;
     margin: 10px 5px;
     border-radius: 3px;
-}
-
-    .btn-contact:hover {
-        background-color: #16a085;
-        color: white;
-        opacity: 0.9;
-    }
-
-/* Contact section styles */
-#contact h2 {
-    color: #1abc9c;
-}
-
-#contact .form-group input,
-#contact .form-group textarea {
-    border: 2px solid #1abc9c;
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-#contact .btn-primary {
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-contact:hover, .btn-primary:hover {
+    background-color: var(--primary-dark);
     color: white;
-}
-
-    #contact .btn-primary:hover {
-        background-color: #16a085;
-        border-color: #16a085;
-    }
-
-
-
- html {
-    overflow-x: hidden;
- }
- body {
-    font-family: 'Source Sans Pro', sans-serif;
- }
-
- h1 {
-    font-weight: bold;
- }
-
- h5 {
-    font-weight: 600;
- }
-
- a {
-    cursor: pointer;
-    color: #1abc9c;
-    text-decoration: none;
- }
-
- a:hover {
-    text-decoration:none;
-    color: #1abc9c;
     opacity: 0.9;
- }
-
- hr {
-    border-top: 5px solid #1abc9c;
-    width: 80px;
-    padding-bottom: 20px;
- }
-
-
- .colour-splash {
-    color: #1abc9c;
- }
-
- .section-primary span {
-    color: #1abc9c;
-    font-weight: bolder;
-    opacity: 1;
- }
-
-
-
-
-
-
-
-
-/* 02. Intro
- * =================================================================== */
-
- .logo-overlay {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 999;
-}
-
-.logo-overlay img {
+  }
+  
+  /* Contact section styles */
+  #contact h2 {
+    color: var(--primary-color);
+  }
+  
+  #contact .form-control {
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #contact .form-control:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 0.25rem rgba(26, 188, 156, 0.25);
+  }
+  
+  #contact .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* 02. Intro
+   * =================================================================== */
+   .logo-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }
+  
+  .logo-overlay img {
     width: 88px;
     height: auto;
-}
-
- .section-image {
- 	background: #151515 url(https://images.unsplash.com/photo-1601997123254-a9f1ad6a756b?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+  }
+  
+  /* Larger logo on desktop */
+  @media (min-width: 992px) {
+    .logo-overlay {
+      top: 30px;
+      left: 30px;
+    }
+    
+    .logo-overlay img {
+      width: 150px;
+    }
+  }
+  
+  .section-image {
+    background: #151515 url(https://images.unsplash.com/photo-1601997123254-a9f1ad6a756b?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 80vh;
     position: relative;
     text-align: center;
     color: #fff;
-    display:table;
- }
-
- .img-overlay {
+    display: table;
+  }
+  
+  .img-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #111111;
-    opacity: .7;
- }
-
- .intro {
+    background: var(--overlay-color);
+  }
+  
+  .intro {
     vertical-align: middle;
     text-align: center;
-    display:table-cell;
-    -webkit-transform: translateY(-2.1rem);
-    -ms-transform: translateY(-2.1rem);
-    transform: translateY(-2.1rem);
-}
-
-.intro .row {
-    margin-right: 0;
-    margin-left:0;
-}
-
-.intro h1 {
-    font-size: 84px;
-}
-
-.intro h5 {
-    color: #1abc9c;
-    font-size: 2.3rem;
+    display: table-cell;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .intro h1 {
+    font-size: clamp(50px, 8vw, 84px);
+    margin-bottom: 20px;
+  }
+  
+  .intro h5 {
+    color: var(--primary-color);
+    font-size: clamp(18px, 3vw, 23px);
     margin-bottom: 0;
     text-transform: uppercase;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-}
-
-.section-image span {
+  }
+  
+  .intro-subtitle {
+    font-size: clamp(14px, 1.8vw, 18px);
+    margin-top: 10px;
+  }
+  
+  .section-image span {
     text-transform: uppercase;
-    font-size: 1.4em;
+    font-size: clamp(14px, 2vw, 18px);
     padding: 0 10px;
     font-weight: 100;
-}
-
-.section-image h1 {
-    margin-top: 0;
-}
-
-.section-image p {
-    font-weight: lighter;
-    opacity: 0.9;
-}
-
-
-
-/* 03. Social Icons
- * =================================================================== */
-
-.social {
-  margin: 0 10px;
-  padding-top: 1.3em;
-  text-align: center;
-  color: #fff;
-  font-size: 0.9em;
-}
-
-.social a {
-  color: white;
-  text-decoration:none;
-  padding: 2em;
-}
-
-.social a:hover{
-  opacity: 0.6;
-}
-
-.social-footer {
-    position: block;
-    padding: 15px;
-}
-
-.social-footer a {
+  }
+  
+  /* 03. Social Icons
+   * =================================================================== */
+  .social {
+    margin: 0 10px;
+    padding-top: 1.3em;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .social a {
+    color: white;
+    text-decoration: none;
+    padding: clamp(0.7em, 2vw, 2em);
+    display: inline-block;
+  }
+  
+  .social-footer {
+    padding: 15px 0;
+  }
+  
+  .social-footer a {
     color: white;
     text-decoration: none;
     padding: 0.6em;
     font-size: 1.7em;
-}
-
-col-md-6 col-md-offset-3 text-center {
+    display: inline-block;
+  }
+  
+  .social-contact a {
+    color: var(--primary-color);
+    margin-right: 15px;
+    display: inline-block;
+  }
+  
+  /* 04. Service Grid Styles
+   * =================================================================== */
+  .section-services {
+    padding: var(--section-padding);
+    background-color: var(--bg-light);
+  }
+  
+  .section-services-alt {
+    background-color: white;
+  }
+  
+  .section-services h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+  }
+  
+  .service-row {
+    margin-bottom: 30px;
+  }
+  
+  .service-text-container {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .service-text {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .service-text h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .service-text p {
+    margin-bottom: 15px;
+  }
+  
+  .service-text ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .service-text ul li {
+    margin-bottom: 8px;
+  }
+  
+  .service-image-container {
+    padding: 0;
+    min-height: 300px;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* 05. Contact Section Styles
+   * =================================================================== */
+  .contact-info {
+    padding: 20px;
     color: white;
-}
-
-/* 04. Icon Font
- * =================================================================== */
-.lnr {
-    font-size: 4em !important;
-    color: #fff;
-}
-
-/* 05. Section Styles
- * =================================================================== */
-
-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.profilepic {
+  }
+  
+  .contact-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .contact-info p {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .contact-info a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    color: var(--primary-color);
+  }
+  
+  .contact-info i {
+    color: var(--primary-color);
+    width: 25px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  /* 06. Section Styles
+   * =================================================================== */
+  section {
+    padding: var(--section-padding);
+  }
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .profilepic {
     height: 150px;
     width: auto;
-    border-radius: 300px;
-}
-
-.section-primary {
-    border: #1abc9c;
-}
-
-.section-colour {
-    background-color: #1abc9c;
-    color: #fff;
-}
-
-.section-colour p {
-    text-align: justify;
-}
-
-.section-heading .lead, .section-heading h2 {
-    text-align: center;
-}
-
-.section-colour {
-    border: #fff;
-}
-
-.section-colour hr {
-    border-top: 5px solid #fff;
- }
-
-
-
-/* 01. Timeline Styles
- * =================================================================== */
-
-.timeline-icon .fa {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  .section-primary {
+    background-color: var(--bg-dark);
     color: white;
-    margin: 14px;
-    font-size: 1.7em;
-}
-
-#skills {
-    background: #151515 url(https://images.unsplash.com/photo-1456983933114-c22026990f4b?dpr=2&auto=format&crop=entropy&fit=crop&w=1280&h=720&q=80) no-repeat center center;
-    height: auto;
-}
-
-
-/* 05. Footer
- * =================================================================== */
-
-footer {
+  }
+  
+  .section-primary .lead {
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  
+  /* Mouse Icon */
+  .mouse-icon {
+    border: 2px solid #fff;
+    border-radius: 16px;
     display: block;
-    position: static;
-    bottom: 0;
+    height: 50px;
+    margin: 100px auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 30px;
+    z-index: 10;
+  }
+  
+  .mouse-icon .scroll {
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: scrolling;
+    animation-play-state: running;
+    animation-timing-function: linear;
+  }
+  
+  .mouse-icon .scroll {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 10px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 4px;
+    width: 4px;
+  }
+  
+  @keyframes scrolling {
+    0% {
+      opacity: 0;
+      top: 5px;
+    }
+    30% {
+      opacity: 1;
+      top: 10px;
+    }
+    100% {
+      opacity: 0;
+      top: 25px;
+    }
+  }
+  
+  /* 07. Footer
+   * =================================================================== */
+  footer {
     background-color: black;
     color: #fff;
     padding: 50px 0;
-
-}
-
-footer p {
+  }
+  
+  footer p {
     padding: 15px;
     opacity: 0.8;
-}
-
-
-/* EXTRAS
- * =================================================================== */
-
-
-
-        /* Mouse Icon
-         * =================================================================== */
-        .mouse-icon {
-            border: 2px solid #fff;
-            border-radius: 16px;
-            display: block;
-            height: 50px;
-            margin: 100px auto;
-            position: absolute;
-            left: 0;
-            right: 0;
-            width: 30px;
-            z-index: 10;
-        }
-        .mouse-icon .scroll {
-            animation-delay: 0s;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-name: scrolling;
-            animation-play-state: running;
-            animation-timing-function: linear;
-        }
-        .mouse-icon .scroll {
-            background: #fff none repeat scroll 0 0;
-            border-radius: 10px;
-            height: 10px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            top: 4px;
-            width: 4px;
-        }
-        @keyframes scrolling {
-        0% {
-            opacity: 0;
-            top: 5px;
-        }
-        30% {
-            opacity: 1;
-            top: 10px;
-        }
-        100% {
-            opacity: 0;
-            top: 25px;
-        }
-        }
-
-        .pad-xl {
-            padding: 200px 0px;
-        }
-
-        .pad-lg {
-            padding: 160px 0px;
-        }
-
-        .pad-sm {
-            padding: 80px 0px;
-        }
-
-        .pad-xs {
-            padding: 30px 0px;
-        }
-
-        /* /Mouse Icon
-         * =================================================================== */
-
- 
-/* Media Queries
- * =================================================================== */
-
-@media (max-width: 480px) {
+    margin: 0;
+  }
+  
+  footer a {
+    color: white;
+  }
+  
+  /* Media Queries
+   * =================================================================== */
+  @media (max-width: 991px) {
+    .service-text-container, .service-image-container {
+      padding: 15px;
+    }
+    
+    .service-image {
+      min-height: 250px;
+    }
+    
+    .service-row {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 60px 0;
+    }
+    
+    .social-footer, footer p {
+      text-align: center;
+    }
+    
+    .section-image {
+      height: 70vh;
+    }
+    
     .social a {
-        padding: 0.4em;
-        font-size: 0.9em;
+      padding: 0.8em;
     }
-
-    .social-footer {
-        text-align: center;
-        position:block;
-        text-align: center;
+    
+    .service-row {
+      margin-bottom: 30px;
     }
-
+    
+    .service-text-container {
+      order: 2;
+    }
+    
+    .service-image-container {
+      order: 1;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social a {
+      padding: 0.4em;
+    }
+    
     .social-footer a {
-        padding: 0.3em;
-        font-size: 1.6em;
-
+      padding: 0.3em;
+      font-size: 1.6em;
     }
-
-    .intro-desc {
-        font-size: 1em;
-    }
-
-    .section-image span {
-        font-size: 1em;
-        padding: 0 1px;
-
-}
-
-    .intro h1 {
-        font-size: 50px;
-        padding-top: 15px;
-    }
-
+    
     footer {
-        text-align: center;
-        padding-bottom: 100px;
+      padding-bottom: 60px;
     }
-
-    #skills {
-        background: #151515 url(https://images.unsplash.com/photo-1456983933114-c22026990f4b?dpr=2&auto=format&crop=entropy&fit=crop&w=1280&h=720&q=80) no-repeat center center;
-        background-position: top center;
-
+    
+    .section-image {
+      height: 60vh;
     }
-}
-
-@media (max-width: 991px) {
-    .social-footer {
-        text-align: center;
+    
+    .service-image {
+      min-height: 200px;
     }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color: #e0e0e0;
+      --bg-light: #2d2d2d;
+    }
+    
+    .section-primary {
+      background-color: #222;
+    }
+    
+    .section-services-alt {
+      background-color: #252525;
+    }
+    
+    #contact .form-control {
+      background-color: #2d2d2d;
+      color: #e0e0e0;
+      border-color: var(--primary-color);
+    }
+    
+    #contact .form-control::placeholder {
+      color: #aaa;
+    }
+  }
 
-    footer p {
+  /* Header CSS for JRM Borås */
+
+:root {
+    --primary-color: #4adcb5; /* Brighter teal */
+    --primary-dark: #16a085;
+  }
+  
+  /* Logo Styling */
+  .logo-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }
+  
+  .logo-overlay img {
+    width: 88px;
+    height: auto;
+  }
+  
+  /* Larger logo on desktop */
+  @media (min-width: 992px) {
+    .logo-overlay {
+      top: 30px;
+      left: 30px;
+    }
+    
+    .logo-overlay img {
+      width: 150px;
+    }
+  }
+  
+  /* Contact Button in Header */
+  .contact-button-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 999;
+  }
+  
+  .btn-contact-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Dosis', arial, tahoma, verdana;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-contact-header:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+  }
+  
+  /* Header Improvements for JRM Borås */
+
+/* Updated Variables */
+:root {
+    --primary-color: #4adcb5;
+    --primary-dark: #16a085;
+    --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hero Section Styling */
+  .section-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url(https://images.unsplash.com/photo-1601997123254-a9f1ad6a756b?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove the old overlay as we're using the gradient in the background */
+  .img-overlay {
+    background: none;
+  }
+  
+  /* Improved Logo Positioning */
+  .logo-overlay {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+  }
+  
+  .logo-overlay img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-overlay img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Contact Button Styling */
+  .contact-button-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+  }
+  
+  .btn-contact-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-contact-header:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Intro Content Styling */
+  .intro {
+    max-width: 800px;
+    padding: 0 20px;
+    margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* Typography in Header - Adjusted Proportions */
+  .name-heading {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-weight: 500;
+    text-shadow: var(--header-text-shadow);
+    opacity: 0.95;
+  }
+  
+  .main-heading {
+    font-size: 5.5rem;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+  }
+  
+  .service-heading {
+    font-size: 1.25rem;
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+    text-shadow: var(--header-text-shadow);
+  }
+  
+  .intro-subtitle {
+    font-size: 1.15rem;
+    margin: 1rem 0;
+    font-weight: 300;
+    opacity: 0.95;
+    text-shadow: var(--header-text-shadow);
+  }
+  
+  /* Social Icons Improved */
+  .social-minimal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem auto;
+    gap: 1.5rem;
+  }
+  
+  .social-minimal a {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-minimal a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .social-minimal i {
+    font-size: 1.2rem;
+  }
+  
+  /* Enhanced Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+  }
+  
+  .scroll-circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .scroll-circle:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .scroll-circle i {
+    color: white;
+    font-size: 16px;
+    animation: bounce 2s infinite;
+  }
+  
+  /* Media Queries - Improved Responsiveness */
+  @media (max-width: 992px) {
+    .main-heading {
+      font-size: 4.5rem;
     }
-
-}
-
-
+  }
+  
+  @media (max-width: 768px) {
+    .section-image {
+      height: 100vh;
+    }
+    
+    .main-heading {
+      font-size: 3.5rem;
+    }
+    
+    .name-heading {
+      font-size: 1.1rem;
+    }
+    
+    .service-heading {
+      font-size: 1.1rem;
+    }
+    
+    .contact-button-container {
+      top: 25px;
+      right: 25px;
+    }
+    
+    .btn-contact-header {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+    
+    .logo-overlay {
+      top: 25px;
+      left: 25px;
+    }
+    
+    .logo-overlay img {
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .main-heading {
+      font-size: 3rem;
+    }
+    
+    .name-heading {
+      font-size: 1rem;
+      letter-spacing: 0.15rem;
+    }
+    
+    .service-heading {
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
+    }
+    
+    .intro-subtitle {
+      font-size: 1rem;
+    }
+    
+    .social-minimal {
+      margin: 2rem auto;
+      gap: 1rem;
+    }
+    
+    .social-minimal a {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+    .contact-button-container {
+      top: 20px;
+      right: 20px;
+    }
+    
+    .btn-contact-header {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+    
+    .logo-overlay {
+      top: 20px;
+      left: 20px;
+    }
+    
+    .logo-overlay img {
+      width: 80px;
+    }
+    
+    .scroll-circle {
+      width: 40px;
+      height: 40px;
+    }
+  }
